@@ -499,7 +499,6 @@
     <div class="players-grid" id="playersGrid"></div>
     <div class="empty" id="emptyState">Pemain tidak ditemukan. Coba kata kunci lain.</div>
 
-    <p style="margin:14px 2px 0;color:var(--muted);font-size:13px;line-height:1.6">ℹ️ Foto, posisi, dan usia pemain dilengkapi bertahap — profil <b>Tenmay</b> sudah lengkap (LW/RW, 26 tahun); pemain lain masih kosong (—) menunggu datanya dikirim.</p>
   </section>
   </div><!-- /panel-profile -->
 
@@ -651,9 +650,6 @@
   </section>
   </div><!-- /panel-keuangan -->
 
-  <footer>
-    <strong>Mini Soccer PTB Cikarang</strong> — Data diambil dari spreadsheet <em>Statistics Team Mini Soccer PTB Cikarang</em> per <strong>17 November 2026</strong>. Statistik diperbarui setiap ada pertandingan baru yang tercatat di sheet tersebut.
-  </footer>
 </main>
 
 <!-- DETAIL PEMAIN -->
@@ -675,7 +671,6 @@
         <div class="detail-box muted"><strong id="dPosisi">—</strong><span>Posisi</span></div>
         <div class="detail-box muted"><strong id="dUsia">—</strong><span>Usia</span></div>
       </div>
-      <div class="note" id="detailNote">Posisi dan usia belum diisi untuk pemain ini. Data akan muncul di sini setelah dilengkapi.</div>
       <button id="closeBtn2" style="width:100%;margin-top:14px;background:var(--gold-bright);color:#075985;border:1px solid #0ea5e9;border-radius:12px;font-weight:700;padding:12px">Tutup</button>
     </div>
   </div>
@@ -808,16 +803,6 @@
     var usiaEl = document.getElementById('dUsia');
     usiaEl.textContent = p.usia ? p.usia + ' tahun' : '—';
     usiaEl.parentElement.classList.toggle('muted', !p.usia);
-    var noteEl = document.getElementById('detailNote');
-    if(p.posisi && p.usia){
-      noteEl.textContent = 'Profil pemain ini sudah lengkap: posisi dan usia terisi.';
-    } else if(p.usia){
-      noteEl.textContent = 'Usia sudah terisi. Posisi belum diisi untuk pemain ini — data akan muncul setelah dilengkapi.';
-    } else if(p.posisi){
-      noteEl.textContent = 'Posisi sudah terisi. Usia belum diisi untuk pemain ini — data akan muncul setelah dilengkapi.';
-    } else {
-      noteEl.textContent = 'Posisi dan usia belum diisi untuk pemain ini. Data akan muncul di sini setelah dilengkapi.';
-    }
     overlay.classList.add('open');
     document.body.style.overflow='hidden';
     document.getElementById('closeBtn').focus();
